@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safeurl fixer</title>
+    <style>
+        textarea {
+            width: 100%;
+        }
+        body {
+            overflow-wrap: break-word;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div {
+            margin: 1em auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Encode and delink</h1>
+    <div><p>Enter URL and run</p></div>
+    <div><textarea id="urlput"></textarea></div> <div><button type="button" id="btn">Run</button></div>
+    <div><a id="linkki" target="_blank"></a></div>
+    <script>
+        const urlput = document.getElementById("urlput");
+        const linkki = document.getElementById("linkki");
+        document.getElementById("btn").addEventListener('click', ()=>{
+            let original = urlput.value;
+            let unsafe = original.match(/^(https:.+?url=)(.+)(&data=04%7C01)/)
+            let spliturl = unsafe[2]
+            let actual = decodeURIComponent(spliturl)
+            linkki.innerText = actual;
+            linkki.setAttribute('href', actual);
+        })
+    </script>
+</body>
+</html>
