@@ -1,0 +1,5 @@
+# Safeurl fixer
+
+Outlook 365 can change external URLs to use a ["Safe Link"](https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/atp-safe-links?view=o365-worldwide) with Microsoft Defender. I grew tired of occasionally having to wait for the check to complete, plus I read my emails in plain text and feel rather confident in knowing when a link is safe by looking at it. So I wrote me a simple web page to convert the links to their original version. An Outlook add-in would've been even nicer, but didn't want to go through the hassle of learning how to implement one, just to see if it actually would even work (plus I don't have access to an Ultimate version of VS anymore).
+
+So the solution is a simple web page where you can paste the link, press "Run" and the unsafe link appears. Clicking the created link it will take you to the site.
